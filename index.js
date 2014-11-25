@@ -5,7 +5,7 @@ function es6transpiler ( code, options ) {
 
 	// es6-transpiler uses String#contains, which is not available in node 0.10.x
 	if ( !String.prototype.contains ) {
-		String.prototype.contains = function( what ) { return this.indexOf( what ) !== -1; };
+		String.prototype.contains = function () { return this.indexOf.apply( this, arguments ) !== -1; };
 	}
 
 	options.src = code;
