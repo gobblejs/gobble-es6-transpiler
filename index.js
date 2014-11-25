@@ -3,6 +3,11 @@ module.exports = es6transpiler;
 function es6transpiler ( code, options ) {
 	var transpiled;
 
+	// es6-transpiler uses String#contains, which is not available in node 0.10.x
+	if ( !String.prototype.contains ) {
+		String.prototype.contains = function( what ) { return this.indexOf( what ) !== -1; };
+	}
+
 	options.src = code;
 	transpiled = require( 'es6-transpiler' ).run( options );
 
