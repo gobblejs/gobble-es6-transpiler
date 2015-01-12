@@ -21,6 +21,8 @@ module.exports = gobble( 'js' ).map( 'es6-transpiler', options );
 
 The `options` argument is optional, and is passed to es6-transpiler (the `src` property is added). See [the full list of options](https://github.com/termi/es6-transpiler#options).
 
+Additionally, you can pass an `onError` function. If present, this function will be called with any errors that occur; otherwise, an exception will be raised.
+
 
 ## License
 

@@ -1,12 +1,12 @@
 {
   "name": "gobble-es6-transpiler",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Compile ES6 files with gobble and es6-transpiler",
   "author": "Rich Harris",
   "license": "MIT",
   "repository": "https://github.com/gobblejs/gobble-es6-transpiler",
   "dependencies": {
-    "es6-transpiler": "~0.7.14-2"
+    "es6-transpiler": "^0.7.18"
   },
   "keywords": [
     "gobble"
