@@ -12,7 +12,11 @@ function es6transpiler ( code, options ) {
 	transpiled = require( 'es6-transpiler' ).run( options );
 
 	if ( transpiled.errors.length ) {
-		throw new Error( 'Errors transpiling code: ' + JSON.stringify( transpiled.errors ) );
+		if ( options.onError ) {
+			options.onError( transpiled.errors );
+		} else {
+			throw new Error( 'Errors transpiling code: ' + JSON.stringify( transpiled.errors ) );
+		}
 	}
 
 	return transpiled.src;
